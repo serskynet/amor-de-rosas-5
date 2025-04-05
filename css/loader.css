@@ -1,0 +1,20 @@
+/* Estilos para el loader */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Ocultar el loader después de cargar */
+.loader-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
