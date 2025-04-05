@@ -1,0 +1,489 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Estructura base */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 228, 196, 0.3), rgba(248, 215, 176, 0.3));
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Menú lateral */
+nav {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255, 192, 203, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    width: 80%;
+    padding: 0;
+    margin-top: 30px;
+}
+
+nav ul li {
+    margin: 16px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 30px;
+    background: rgba(255, 128, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 128, 255, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Logo */
+.logo {
+    margin-top: auto;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    max-width: 140px;
+    border-radius: 50%;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+    transition: all 0.4s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo:hover img {
+    transform: scale(1.05) rotate(3deg);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Contenido principal */
+.contenido {
+    flex-grow: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bloques de contenido */
+.bloque {
+    width: 85%;
+    max-width: 850px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+.bloque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.bloque h1 {
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.bloque h2 {
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #444;
+    font-weight: 600;
+}
+
+.bloque p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    width: 85%;
+    max-width: 850px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: #666;
+    letter-spacing: 0.3px;
+}
+
+/* Video de fondo */
+.video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.85;
+    filter: brightness(1.05) contrast(0.95);
+}
+
+/* Botón flotante de WhatsApp */
+.boton-whatsapp {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #25D366, #1EA959);
+    border-radius: 50%;
+    width: 68px;
+    height: 68px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    animation: pulse 2s infinite;
+}
+
+.boton-whatsapp img {
+    width: 36px;
+    height: 36px;
+    transition: transform 0.3s ease;
+}
+
+.boton-whatsapp:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+    background: linear-gradient(135deg, #1EA959, #128C7E);
+}
+
+.boton-whatsapp:hover img {
+    transform: rotate(10deg);
+}
+
+.boton-whatsapp::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.3);
+    opacity: 0.8;
+    z-index: -1;
+    animation: ripple 2s infinite;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bloque, footer {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 220px;
+    }
+    
+    .contenido {
+        margin-left: 220px;
+        padding: 30px 20px;
+    }
+    
+    .bloque {
+        padding: 35px 25px;
+    }
+    
+    .bloque h1 {
+        font-size: 2.4rem;
+    }
+    
+    .bloque h2 {
+        font-size: 1.8rem;
+    }
+
+    .boton-whatsapp {
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+    }
+
+    .boton-whatsapp img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px 0;
+        flex-direction: row;
+        justify-content: space-between;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 0;
+        width: auto;
+        padding: 0 15px;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+    
+    nav ul li a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        margin-top: 0;
+        margin-right: 20px;
+        padding: 10px;
+    }
+    
+    .logo img {
+        max-width: 80px;
+    }
+    
+    .contenido {
+        margin-left: 0;
+        padding: 20px 15px;
+        margin-top: 0;
+    }
+    
+    .bloque {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .bloque h1 {
+        font-size: 2rem;
+    }
+    
+    .bloque h2 {
+        font-size: 1.6rem;
+    }
+    
+    footer {
+        width: 100%;
+    }
+
+    .boton-whatsapp {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .boton-whatsapp img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Efecto de overlay para mejorar la legibilidad con el video */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 228, 196, 0.2), rgba(255, 192, 203, 0.2));
+    pointer-events: none;
+    z-index: -1;
+}
+
+@media (max-width: 991px) {
+    nav {
+        width: 200px;
+    }
+
+    .contenido {
+        margin-left: 200px;
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+}
+
+/* Para celulares */
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        top: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .contenido {
+        margin: 100px 0 0 0;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    footer {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Extra pequeño (modo super móvil) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main p {
+        font-size: 0.9rem;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}
